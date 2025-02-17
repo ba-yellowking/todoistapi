@@ -3,7 +3,7 @@ import {useProjects} from "../../context/ProjectContext.jsx";
 
 function GetProjects() {
 
-  const { projectArray } = useProjects()
+  const { projectArray, taskArray, showTasks } = useProjects()
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,10 +20,11 @@ function GetProjects() {
       {isOpen && (
         <div className="get-projects-list">
           {projectArray.length > 0 ? (
-            projectArray.slice(1).map((option, index) => (
+            projectArray.slice(1).map((option) => (
               <div
                 className="get-projects-option"
-                key={index}
+                key={option.id}
+                onClick={() => showTasks(option.id)}
               >
                 {option.name}
               </div>
@@ -32,7 +33,14 @@ function GetProjects() {
             <div className="get-projects-option">Empty</div>
           )}
         </div>
+
       )}
+
+      {taskArray.map((task) => (
+        <div key={task.id}>
+          {task.content}
+        </div>
+      ))}
     </>
   );
 }

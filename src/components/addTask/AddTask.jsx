@@ -6,9 +6,8 @@ import { useProjects } from "../../context/ProjectContext.jsx";
 
 function AddTask() {
   const { api } = useAuth();
-  const { projectArray, showProjects } = useProjects();
+  const { projectArray, showProjects, selectedProjectId, setSelectedProjectId } = useProjects();
 
-  const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [taskContent, setTaskContent] = useState("");
   const [error, setError] = useState({ task: false, project: false });
 
