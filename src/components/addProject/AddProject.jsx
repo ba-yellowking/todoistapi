@@ -21,6 +21,7 @@ function AddProject() {
         .then(response => {
           console.log(response);
           selectProject(response.id, response.name)
+          console.log(projectArray)
           setProjectName("");
         })
         .catch(error => console.error(error));

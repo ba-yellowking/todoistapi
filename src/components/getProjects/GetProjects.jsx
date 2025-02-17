@@ -1,36 +1,40 @@
-import {useAuth} from "../../context/AuthContext.jsx";
-import {useState} from "react";
+import { useState } from "react";
+import {useProjects} from "../../context/ProjectContext.jsx";
 
 function GetProjects() {
 
-  const { api } = useAuth()
+  const { projectArray } = useProjects()
 
-  const [projects, setProjects] = useState([])
-  const [isFetched, setIsFetched] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  function showProjects() {
-    setIsFetched(true)
-    api.getProjects()
-      .then(function(response) {
-        console.log(response)
-        setProjects(response.results)
-      })
-      .catch((error) => console.log(error))
-  }
+  const toggleDropdown = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   return (
-    <div className="get-projects">
-      <button onClick={showProjects}>Get projects</button>
+    <>
+      <div className="get-projects-header" onClick={toggleDropdown}>
+        <div>Project list *</div>
+      </div>
 
-      {isFetched && projects.length === 1 ? (
-        <p>No projects</p>
-      ) : (
-        projects.slice(1).map((item) => (
-          <div key={item.id}>{item.name}</div>
-        ))
+      {isOpen && (
+        <div className="get-projects-list">
+          {projectArray.length > 0 ? (
+            projectArray.slice(1).map((option, index) => (
+              <div
+                className="get-projects-option"
+                key={index}
+              >
+                {option.name}
+              </div>
+            ))
+          ) : (
+            <div className="get-projects-option">Empty</div>
+          )}
+        </div>
       )}
-    </div>
-  )
+    </>
+  );
 }
 
-export default GetProjects
+export default GetProjects;
