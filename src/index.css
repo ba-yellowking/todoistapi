@@ -1,0 +1,10 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.auth-container,
+.add-project-container,
+.get-projects-container,
+.add-task-container {
+  margin: 40px;
+}
