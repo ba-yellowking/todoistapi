@@ -1,0 +1,19 @@
+.input-ui {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-ui::placeholder {
+  align-content: center;
+  color: #aaa;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.add-project-input-style,
+.add-task-input-style {
+  font-size: 16px;
+  color: #202020;
+}

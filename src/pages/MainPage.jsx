@@ -1,40 +1,25 @@
 import Auth from "../components/auth/Auth.jsx";
 import AddProject from "../components/addProject/AddProject.jsx";
-import {useAuth} from "../context/AuthContext.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 import GetProjects from "../components/getProjects/GetProjects.jsx";
 import AddTask from "../components/addTask/AddTask.jsx";
 
 function MainPage() {
-
   const { accessToken, authorize } = useAuth();
 
   return (
-    <div className="container">
+    <div className="todo-container">
       <div className="auth-container">
-        <Auth
-          accessToken={accessToken}
-          authorize={authorize}
-        />
+        <Auth accessToken={accessToken} authorize={authorize} />
       </div>
 
-      <div className="add-project-container">
-        <AddProject
+      <AddProject />
 
-        />
-      </div>
+      <GetProjects />
 
-      <div className="get-projects-container">
-        <GetProjects/>
-      </div>
-
-      <div className="add-task-container">
-        <AddTask
-
-        />
-      </div>
-
+      <AddTask />
     </div>
-  )
+  );
 }
 
-export default MainPage
+export default MainPage;

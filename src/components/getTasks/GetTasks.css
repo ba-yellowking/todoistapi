@@ -1,0 +1,36 @@
+.tasks-container {
+
+  margin: 10px 0;
+
+  width: 250px;
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  font-weight: 300;
+}
+
+.task-content-functions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.finish-task {
+  margin-right: 5px;
+}

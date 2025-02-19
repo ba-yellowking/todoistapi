@@ -1,7 +1,14 @@
+import "./Dropdown.css";
 import { useState } from "react";
 
-function Dropdown({ options, setSelectedProjectId, labelKey = "name", valueKey = "id", placeholder = "Select an option" }) {
-
+function Dropdown({
+  options,
+  setSelectedProjectId,
+  labelKey = "name",
+  valueKey = "id",
+  placeholder = "Select an option",
+  className = "",
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(placeholder);
 
@@ -12,26 +19,32 @@ function Dropdown({ options, setSelectedProjectId, labelKey = "name", valueKey =
   const selectOption = (option) => {
     setSelectedOption(option[labelKey]);
     setSelectedProjectId(option[valueKey]);
-    console.log(option[valueKey])
     setIsOpen(false);
   };
 
   return (
-    <div className="dropdown-container">
-      <div className="dropdown-header" onClick={toggleDropdown}>
-        {selectedOption} *
+    <div className={`dropdown-container ${className.container}`}>
+      <div
+        className={`dropdown-header ${className.header}`}
+        onClick={toggleDropdown}
+      >
+        {selectedOption}
       </div>
 
       {isOpen && (
-        <div className="dropdown-list">
+        <div className={`dropdown-list ${className.list}`}>
           {options.length > 0 ? (
             options.slice(1).map((option) => (
               <div
-                className="dropdown-option"
-                key={option[valueKey]}
-                onClick={() => selectOption(option)}
+                className={`dropdown-option-container ${className.optionContainer}`}
               >
-                {option[labelKey]}
+                <div
+                  className={`dropdown-option ${className.option}`}
+                  key={option[valueKey]}
+                  onClick={() => selectOption(option)}
+                >
+                  {option[labelKey]}
+                </div>
               </div>
             ))
           ) : (

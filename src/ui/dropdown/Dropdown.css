@@ -1,0 +1,49 @@
+.add-task-dropdown-container {
+
+}
+
+.add-task-dropdown-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  background: #969da8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.dropdown-option-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 3px;
+  border-bottom: 1px solid #ececec;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.add-task-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  font-weight: 300;
+}
+
+.add-task-dropdown-option {
+  display: flex;
+  cursor: pointer;
+  padding: 5px;
+}

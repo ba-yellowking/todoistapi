@@ -1,0 +1,15 @@
+.add-task-container {
+  width: 250px;
+}
+
+.add-new-task {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+}

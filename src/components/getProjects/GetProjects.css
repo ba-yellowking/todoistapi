@@ -1,0 +1,58 @@
+.get-projects-container {
+  width: 250px;
+}
+
+.get-projects-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  background: #969da8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.get-projects-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  font-weight: 300;
+}
+
+.option-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ececec;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.get-projects-option {
+  display: flex;
+  cursor: pointer;
+}
+
+.option-container:hover {
+  background-color: #f8f8f8;
+}
+
+.delete-project {
+  padding: 3px;
+  color: #1a1a1a;
+  cursor: pointer;
+}

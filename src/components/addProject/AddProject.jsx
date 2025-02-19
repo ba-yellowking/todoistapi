@@ -1,15 +1,16 @@
 import { useState } from "react";
-import Input from "../../ui/input/Input.jsx";
-import {useAuth} from "../../context/AuthContext.jsx";
-import {useProjects} from "../../context/ProjectContext.jsx";
+import { useAuth } from "../../context/AuthContext.jsx";
+import { useProjects } from "../../context/ProjectContext.jsx";
+import "./AddProject.css";
+import Button from "../../ui/Button/Button.jsx";
+import InputUI from "../../ui/input/InputUI.jsx";
 
 function AddProject() {
-
   const { api } = useAuth();
-  const { selectProject, projectArray } = useProjects()
+  const { addProject } = useProjects();
 
   const [projectName, setProjectName] = useState("");
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   function onChangeAddProject(event) {
     setProjectName(event.target.value);
@@ -17,27 +18,35 @@ function AddProject() {
 
   function addNewProject() {
     if (projectName !== "") {
-      api.addProject({ name: projectName })
-        .then(response => {
+      api
+        .addProject({ name: projectName })
+        .then((response) => {
           console.log(response);
-          selectProject(response.id, response.name)
-          console.log(projectArray)
+          addProject(response.id, response.name);
           setProjectName("");
         })
-        .catch(error => console.error(error));
+        .catch((error) => console.error(error));
     } else {
-      setError(true)
+      setError(true);
     }
   }
 
   return (
-    <div className="add-new-project">
-      <Input
-        onChange={onChangeAddProject}
-        placeholder={error ? "Cannot be blank" : "Project name"}
-        value={projectName}
-      />
-      <button onClick={addNewProject}>Add new project</button>
+    <div className="add-project-container">
+      <div className="add-new-project">
+        <InputUI
+          onChange={onChangeAddProject}
+          placeholder={error ? "Cannot be blank" : "Project name"}
+          value={projectName}
+          className="add-project-input-style"
+        ></InputUI>
+
+        <Button
+          title="Add a new project"
+          callback={addNewProject}
+          className="add-project-button-style"
+        ></Button>
+      </div>
     </div>
   );
 }

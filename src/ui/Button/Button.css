@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background: #a4a9b3;
+}
+
+.add-project-button-style,
+.add-task-button-style {
+  font-size: 16px;
+  color: white;
+  background: #969da8;
+}
