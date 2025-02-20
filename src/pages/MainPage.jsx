@@ -9,15 +9,25 @@ function MainPage() {
 
   return (
     <div className="todo-container">
-      <div className="auth-container">
-        <Auth accessToken={accessToken} authorize={authorize} />
-      </div>
+      {!accessToken ? (
+        <div className="welcome-container">
+          <div className="auth-top">
+            <img src="/src/images/dogs.jpg" alt="Dogs" />
+          </div>
+          <div className="auth-container">
+            <Auth accessToken={accessToken} authorize={authorize} />
+          </div>
+          <div className="auth-bottom">Bottom</div>
+        </div>
+      ) : (
+        <div>
+          <AddProject />
 
-      <AddProject />
+          <GetProjects />
 
-      <GetProjects />
-
-      <AddTask />
+          <AddTask />
+        </div>
+      )}
     </div>
   );
 }

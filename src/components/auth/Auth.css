@@ -1,0 +1,17 @@
+
+
+.auth-container {
+  width: 450px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-welcome {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}

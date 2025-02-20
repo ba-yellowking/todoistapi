@@ -1,18 +1,16 @@
-function Auth({ accessToken, authorize }) {
+import "./Auth.css";
+import Button from "../../ui/Button/Button.jsx";
+
+function Auth({ authorize }) {
   return (
-    <div className="auth">
-      <p>Authorization</p>
-      {accessToken ? (
-        <>
-          <p>You are authorized</p>
-        </>
-      ) : (
-        <>
-          <p>You are not authorized</p>
-          <button onClick={authorize}>Login</button>
-        </>
-      )}
-    </div>
+    <>
+      <p className="auth-welcome">Welcome to a simple to-do list!</p>
+      <Button
+        className="login-button-style"
+        title="Login"
+        callback={authorize}
+      ></Button>
+    </>
   );
 }
 
