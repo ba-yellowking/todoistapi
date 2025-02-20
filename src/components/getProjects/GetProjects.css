@@ -1,5 +1,5 @@
 .get-projects-container {
-  width: 250px;
+  width: 300px;
 }
 
 .get-projects-header {
@@ -16,6 +16,7 @@
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  height: 46px;
   max-width: 400px;
 }
 
@@ -32,6 +33,7 @@
 }
 
 .option-container {
+  height: 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,15 +42,17 @@
   border-bottom: 1px solid #ececec;
   border-radius: 5px;
   background-color: #ffffff;
+  transition: 0.4s;
 }
 
 .get-projects-option {
+  width: 100%;
   display: flex;
   cursor: pointer;
 }
 
 .option-container:hover {
-  background-color: #f8f8f8;
+  background-color: #f6f6f6;
 }
 
 .delete-project {

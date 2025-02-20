@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import InputUI from "../../ui/input/InputUI.jsx";
 import Dropdown from "../../ui/dropdown/Dropdown.jsx";
 import { useProjects } from "../../context/ProjectContext.jsx";
-import Button from "../../ui/Button/Button.jsx";
+import Button from "../../ui/button/Button.jsx";
 
 function AddTask() {
   const { api } = useAuth();

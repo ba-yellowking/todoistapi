@@ -1,5 +1,5 @@
 import "./Auth.css";
-import Button from "../../ui/Button/Button.jsx";
+import Button from "../../ui/button/Button.jsx";
 
 function Auth({ authorize }) {
   return (

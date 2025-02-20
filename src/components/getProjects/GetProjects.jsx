@@ -4,7 +4,7 @@ import { useProjects } from "../../context/ProjectContext.jsx";
 import GetTasks from "../getTasks/GetTasks.jsx";
 
 function GetProjects() {
-  const { projectArray, taskArray, showTasks, deleteProject } = useProjects();
+  const { projectArray, showTasks, deleteProject } = useProjects();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,7 +47,6 @@ function GetProjects() {
         </div>
       )}
 
-      <GetTasks taskArray={taskArray} />
     </div>
   );
 }

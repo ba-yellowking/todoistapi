@@ -20,6 +20,7 @@
 }
 
 .dropdown-option-container {
+  height: 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,6 +29,11 @@
   border-bottom: 1px solid #ececec;
   border-radius: 5px;
   background-color: #ffffff;
+  transition: 0.3s;
+}
+
+.dropdown-option-container:hover {
+  background-color: #f6f6f6;
 }
 
 .add-task-dropdown-list {
@@ -43,6 +49,7 @@
 }
 
 .add-task-dropdown-option {
+  width: 100%;
   display: flex;
   cursor: pointer;
   padding: 5px;

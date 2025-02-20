@@ -22,6 +22,9 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   gap: 20px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .welcome-container {
@@ -36,24 +39,51 @@ body {
 .auth-top {
   width: 100%;
   height: 200px;
-  background-color: green;
-}
-
-.auth-top img {
-  width: 30%;
-  height: 100%;
-  background-size: contain;
+  background-color: #ffffff;
+  background-image: url(./images/auth-top.jpg);
+  background-size: cover;
   background-repeat: repeat;
 }
 
 .auth-bottom {
   width: 100%;
   height: 200px;
-  background-color: green;
+  background-color: #ffffff;
+  background-image: url(./images/auth-bottom.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center -90px;
 }
 
 .add-project-container,
 .get-projects-container,
 .add-task-container {
   width: 250px;
+}
+
+.top-section {
+  height: 80%;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px dotted #ececec;
+  border-radius: 10px;
+}
+
+.top-right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.header, .bottom {
+  height: 80px;
+  width: 100%;
+  background-image: url("./images/auth-top.jpg");
+  background-repeat: repeat;
+  background-size: cover;
 }

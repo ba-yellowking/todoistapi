@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useProjects } from "../../context/ProjectContext.jsx";
 import "./AddProject.css";
-import Button from "../../ui/Button/Button.jsx";
+import Button from "../../ui/button/Button.jsx";
 import InputUI from "../../ui/input/InputUI.jsx";
 
 function AddProject() {

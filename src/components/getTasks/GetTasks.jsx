@@ -1,5 +1,6 @@
 import "./GetTasks.css";
 import { useAuth } from "../../context/AuthContext.jsx";
+import {useProjects} from "../../context/ProjectContext.jsx";
 
 function GetTasks({ taskArray }) {
   const { api } = useAuth();
