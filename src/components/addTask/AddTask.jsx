@@ -13,6 +13,7 @@ function AddTask() {
     showProjects,
     selectedProjectId,
     setSelectedProjectId,
+    showTasks,
   } = useProjects();
 
   const [taskContent, setTaskContent] = useState("");
@@ -40,6 +41,7 @@ function AddTask() {
         .then((response) => {
           console.log(response);
           setTaskContent("");
+          showTasks(selectedProjectId)
           setError({ task: false, project: false });
         })
         .catch((error) => console.log(error));
@@ -75,7 +77,7 @@ function AddTask() {
         />
 
         <Button
-          title="Add new task"
+          title="Add a new task"
           callback={addNewTask}
           className="add-task-button-style"
         ></Button>

@@ -36,6 +36,7 @@ function Dropdown({
           {options.length > 0 ? (
             options.slice(1).map((option) => (
               <div
+                key={option[valueKey]}
                 className={`dropdown-option-container ${className.optionContainer}`}
               >
                 <div

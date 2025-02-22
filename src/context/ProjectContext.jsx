@@ -9,6 +9,7 @@ export const ProjectProvider = ({ children }) => {
   const [taskArray, setTaskArray] = useState([]);
   const [projectArray, setProjectArray] = useState([]);
   const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [completedTasks, setCompletedTasks] = useState(new Set());
 
   // To add a project
   function addProject(id, name) {
@@ -62,6 +63,9 @@ export const ProjectProvider = ({ children }) => {
         selectedProjectId,
         setSelectedProjectId,
         deleteProject,
+        setTaskArray,
+        completedTasks,
+        setCompletedTasks,
       }}
     >
       {children}

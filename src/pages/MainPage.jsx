@@ -4,40 +4,33 @@ import { useAuth } from "../context/AuthContext.jsx";
 import GetProjects from "../components/getProjects/GetProjects.jsx";
 import AddTask from "../components/addTask/AddTask.jsx";
 import GetTasks from "../components/getTasks/GetTasks.jsx";
-import {useProjects} from "../context/ProjectContext.jsx";
 
 function MainPage() {
   const { accessToken, authorize } = useAuth();
-  const { taskArray } = useProjects();
 
   return (
-    <div className="todo-container">
+    <div className="main-container">
       {!accessToken ? (
-        <div className="welcome-container">
-          <div className="auth-top"></div>
-          <div className="auth-container">
+        <div className="auth-wrapper">
+          <div className="auth-header"></div>
+          <div className="auth-content">
             <Auth accessToken={accessToken} authorize={authorize} />
           </div>
           <div className="auth-bottom"></div>
         </div>
       ) : (
           <>
-            <div className="header"></div>
-
-            <div className="top-section">
-              <GetProjects />
-
-              <GetTasks taskArray={taskArray} />
-
-              <div className="top-right-section">
+            <div className="main-header"></div>
+            <div className="task-manager">
+              <div className="task-controls">
                 <AddProject />
                 <AddTask />
               </div>
+              <GetTasks />
+              <GetProjects />
             </div>
-
-            <div className="bottom"></div>
+            <div className="main-bottom"></div>
           </>
-
       )}
     </div>
   );
